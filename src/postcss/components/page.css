@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.4;
+
+  @media(--desktop-width) {
+    font-size: 110%;
+  }
+}
+
+.page {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px 10px;
+  }
+}

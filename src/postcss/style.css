@@ -1,0 +1,7 @@
+@import "variables.css";
+
+@import "components/page.css";
+@import "components/text.css";
+@import "components/header.css";
+@import "components/main-content.css";
+@import "components/gallery.css";

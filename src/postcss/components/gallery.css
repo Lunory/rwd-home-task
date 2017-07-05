@@ -1,0 +1,27 @@
+.gallery {
+  &__description {
+
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1 calc((100% - 550px)/2);
+    outline: 2px #cecdba;
+
+    &:nth-child(1) {
+      flex: none;
+      flex-basis: 550px;
+      outline-color: #000;
+    }
+
+    &:nth-child(4) {
+      flex: none;
+      flex-basis: 460px;
+      outline-color: #00ff00;
+    }
+  }
+}

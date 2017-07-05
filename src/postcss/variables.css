@@ -1,0 +1,15 @@
+:root {
+
+	--color-white: #fff;
+
+	--color-text: #000000;
+
+	--font-size: 14px;
+	--font-size-md: 16px;
+	--font-size-lg: 18px;
+	--font-family: "Open Sans", "Arial", sans-serif;
+
+
+	@custom-media --tablet-width (min-width: 800px);
+  @custom-media --desktop-width (min-width: 1300px);
+}
