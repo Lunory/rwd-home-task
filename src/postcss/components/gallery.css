@@ -17,13 +17,12 @@
   }
 
   &__header {
-    max-height: 3.2rem;
+    max-height: 3.6rem;
     overflow: hidden;
     margin-bottom: 35px;
 
-    @media (--tablet-width) {
-      max-height: none;
-      overflow: auto;
+    @media (--desktop-width) {
+      max-height: 4.3rem;
     }
   }
 
