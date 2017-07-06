@@ -22,7 +22,7 @@ var atImport = require('postcss-import');
 var mqpacker = require('css-mqpacker');
 var customMedia = require('postcss-custom-media');
 var cssVariables = require('postcss-css-variables');
-
+var objectFitImages = require('postcss-object-fit-images');
 
 //Style
 gulp.task('style', function() {
@@ -33,6 +33,7 @@ gulp.task('style', function() {
       nested(),
       customMedia(),
       cssVariables(),
+      objectFitImages(),
       autoprefixer({browsers: [
         'last 2 versions'
       ]}),
