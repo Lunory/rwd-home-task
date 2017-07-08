@@ -1,9 +1,0 @@
-:root {
-
-	--color-white: #fff;
-
-	--color-text: #000;
-
-	@custom-media --tablet-width (min-width: 768px);
-  @custom-media --desktop-width (min-width: 1300px);
-}
