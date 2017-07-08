@@ -24,6 +24,9 @@ var customMedia = require('postcss-custom-media');
 var cssVariables = require('postcss-css-variables');
 var objectFitImages = require('postcss-object-fit-images');
 
+//Concatenate js
+var concat = require('gulp-concat');
+
 //Style
 gulp.task('style', function() {
   return gulp.src('src/postcss/style.css')
@@ -49,8 +52,10 @@ gulp.task('style', function() {
 
 //JS
 gulp.task('js', function() {
-  return gulp.src('build/js/*.js')
-    .pipe(jsMin())
+  return gulp.src(['src/js/objFitImg.js', 'src/js/pictureFill.js', 'src/js/app.js'])
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('build/js'))
+    .pipe(jsMin('build/js/*.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/js'));
 });
@@ -75,7 +80,6 @@ gulp.task('copy', function() {
   return gulp.src([
     'src/fonts/**/*.{woff,woff2}',
     'src/img/**',
-    'src/js/**',
     'src/*.html'
   ], {
     base: './src'
@@ -95,11 +99,11 @@ gulp.task('html:update', ['html:copy'], function(done) {
 });
 
 gulp.task('js:copy', function() {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src('src/js/script.js')
     .pipe(gulp.dest('build/js'));
 });
 
-gulp.task('js:update', ['js:copy'], function(done) {
+gulp.task('js:update', ['js'], function(done) {
   server.reload();
   done();
 });
@@ -120,5 +124,5 @@ gulp.task('serve', function() {
 
 //Run
 gulp.task('build', function(done) {
-  run('clean', 'copy', 'style', 'js', 'images', done)
+  run('clean', 'js', 'copy', 'style', 'images', done)
 });
