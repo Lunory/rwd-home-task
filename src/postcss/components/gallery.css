@@ -43,11 +43,11 @@
       margin: 0 5px;
       margin-bottom: 10px;
 
-      &:nth-child(4n) {
+      &:nth-child(7n+4) {
         flex: 1.5 1 460px;
       }
 
-      &:nth-child(7n + 1) {
+      &:nth-child(7n+1) {
         flex: 1 1 550px;
       }
     }
