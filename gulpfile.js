@@ -52,7 +52,7 @@ gulp.task('style', function() {
 
 //JS
 gulp.task('js', function() {
-  return gulp.src(['src/js/objFitImg.js', 'src/js/pictureFill.js', 'src/js/app.js'])
+  return gulp.src(['src/js/objFitImg.js', 'src/js/app.js'])
     .pipe(concat('script.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(jsMin('build/js/*.js'))
